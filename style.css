@@ -7,7 +7,7 @@
     display: inline-block;
   }
 body {
-    background: #eee;
+  background: #eee;
   max-width: 960px;
   margin: 20px auto;
 }
@@ -28,4 +28,13 @@ li {
 li.fav {
    background: #ff9ed3;
    color: white;
+}
+.star {
+  visibility:hidden;
+  font-size:30px;
+  cursor:pointer;
+}
+.newImg {
+  width: 250px;
+  height: 200px;
 }

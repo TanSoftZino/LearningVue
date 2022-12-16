@@ -6,11 +6,11 @@ const app = Vue.createApp({
         visible : true,
         books: [
           { title : "Dragon BallZ", author : "John State", img : "assets/pic1.jpg", isFav : true },
-          { title : "Random Guy", author : "Anarchy Ransom", img : "assets/pic1.jpg", isFav : false},
-          { title : "That one moment", author : "Lisian Anderson", img : "assets/pic1.jpg", isFav : false },
+          { title : "Random Guy", author : "Anarchy Ransom", img : "assets/pic2.jpg", isFav : false},
+          { title : "That one moment", author : "Lisian Anderson", img : "assets/pic3.jpg", isFav : false },
         ],
           x : 0,
-          y : 0
+          y : 0,
         
     };
    },
@@ -31,6 +31,16 @@ const app = Vue.createApp({
     handleMouseMove(e){
       this.x = e.offsetX;
       this.y = e.offsetY;
+    },
+    favEvent(book) {
+       //let favourite 
+       book.isFav = !book.isFav;
+    }
+
+   },
+   computed: {
+    filterBooks() {
+      return this.books.filter((book)=> book.isFav);
     }
 
    }

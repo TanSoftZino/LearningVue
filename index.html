@@ -26,8 +26,17 @@
     <div v-show="visible">
       <ul>
         <li v-for="book in books"  :class="{ fav: book.isFav }">
-          <img :src="book.img" :alt="book.title">
-          <p>Book Name: {{book.title}} <br>Author Name: {{book.author}}</p>
+          <img :src="book.img"  :alt="book.title" class="newImg">
+          <p>Book Name: {{book.title}} <br>Author Name: {{book.author}}<br> <button @click="favEvent(book)">Favourite</button>
+        </li>
+      </ul>
+    </div>
+    <div>Favourites</div>
+        <div v-show="visible">
+      <ul>
+        <li v-for="book in filterBooks"  :class="{ fav: book.isFav }">
+          <img :src="book.img"  :alt="book.title" class="newImg">
+          <p>Book Name: {{book.title}} <br>Author Name: {{book.author}}<br> <button @click="favEvent(book)">Favourite</button>
         </li>
       </ul>
     </div>
