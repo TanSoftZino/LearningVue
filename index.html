@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Vue</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+  <h1>
+    Hello VUE!
+  </h1>
+  <style>
+    
+  </style>
+  <div id="app">
+    <h2>Here is the template</h2>
+    <button v-on:click="age++">Increase Age</button>
+    <button v-on:click="age--">Decrease Age</button>
+    <button @click="changeTitle('Dragon BallZ II')">Get AnotherBook Name</button>
+    <button @click="toggleVisibility">
+      <span v-if="visible"> Make Invisible </span>
+      <span v-if="!visible"> Make Visible </span>  
+    </button>
+    <div v-show="visible">
+      <ul>
+        <li v-for="book in books"  :class="{ fav: book.isFav }">
+          <img :src="book.img" :alt="book.title">
+          <p>Book Name: {{book.title}} <br>Author Name: {{book.author}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="box" @mouseover="handleMouseEvent">mouseover (enter)</div>
+    <div class="box" @moouseleave="handleMouseEvent">mouseleave</div>
+    <div class="box" @dblclick="handleMouseEvent($event, 5)">double click</div>
+    <div class="box" @mousemove="handleMouseMove">Position {{x}} - {{y}}</div>
+
+
+  </div>
+</body>
+<script src="app.js"></script>
+</html>
